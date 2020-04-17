@@ -1,2 +1,2 @@
 FROM alpine
-CMD echo "test" > output-file && echo "blah" >> README.md
+CMD echo "test" > output-file

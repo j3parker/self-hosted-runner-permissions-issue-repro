@@ -5,4 +5,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: ./
-      - run: cat README.md
+      - run: cat output-file

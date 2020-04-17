@@ -4,7 +4,7 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Print permissions for all files
-        run: ls -alFR
+        run: ls -alFR || true
 
       - name: Print permissions for foo folder
         run: ls -ld foo 

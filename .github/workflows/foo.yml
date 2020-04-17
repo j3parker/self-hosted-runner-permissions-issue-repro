@@ -3,6 +3,17 @@ jobs:
   repro:
     runs-on: self-hosted
     steps:
+      - name: Print permissions for all files
+        run: ls -alFR
+
+      - name: Print permissions for foo folder
+        run: ls -ld foo 
+
+      # Fails to git clean the foo folder, tries to rm -rf the checkout and then fails
       - uses: actions/checkout@v2
-      - uses: ./
-      - run: cat foo/output-file
+
+      - name: Run a container that outputs to foo/output-file and puts nasty permissions on foo
+        uses: ./
+
+      - name: Display foo/output-file to the screen
+        run: cat foo/output-file
